@@ -1,4 +1,19 @@
-// Cleaned up all the varriables to ensure that they had a singular place and ease of access
+// Table of Contents 
+// 1: Primary variable charts(there's a lot) + start button listener
+// 2: Random Math function
+// 3: Timer function
+// 4: Game Start function
+// 5: Function Chain for q&a
+// 6: If statements for checking answers
+// 7: End Game function
+// 8: High Score Listener
+// 9: Play Again Function
+// 10: Scoreboard Functionalitys Start here
+// 11: The questions and answers are housed here
+
+
+
+// 1: Cleaned up all the varriables to ensure that they had a singular place and ease of access
 var scores = document.getElementById('score');
 var clock = document.getElementById('timer');
 var userScore = document.getElementById('user-score');
@@ -21,7 +36,7 @@ var score = 0;
 // Start button listener
 startButton.addEventListener('click', startGame);
 
-//used the random math functions I learned in the last homework with some ideas I got on W3 to make a random questions array
+// 2: used the random math functions I learned in the last homework with some ideas I got on W3 to make a random questions array
 function shuffleArray(passedArray) {
     for (var i = 0; i < passedArray.length; i++) {
         var rand = Math.floor(Math.random() * passedArray.length);
@@ -32,7 +47,7 @@ function shuffleArray(passedArray) {
     return passedArray;
 }
 
-//Its the timer function for the quiz. I was unhappy with the score based on time so I went a different way for a cleaner look
+// 3: Its the timer function for the quiz. I was unhappy with the score based on time so I went a different way for a cleaner look
 function timer() {
     var timer = setInterval(function () {
         document.getElementById('timer').textContent = 'Time: ' + sec;
@@ -47,7 +62,7 @@ function timer() {
 // It's a blank array so that way it can be randomized similar to the last projects random array
 var shuffled = [];
 
-// This is the button that starts the game. It will also remove elements from being shown when started
+// 4: This is the button that starts the game. It will also remove elements from being shown when started
 function startGame() {
     timer();
     startButton.classList.add('hide');
@@ -69,7 +84,7 @@ function clearoptions() {
     answerButtonsEl.innerHTML = "";
 }
 
-// Longer function chain that moves from one question to the next using event listners
+// 5: Longer function chain that moves from one question to the next using event listners
 function showQuestion(currentQuestionObject) {
     questionEl.textContent = currentQuestionObject.title;
     clearoptions();
@@ -103,7 +118,7 @@ function showQuestion(currentQuestionObject) {
     })
 }
 
-// Check to see if the user satatement is correct and to see if they have answered all of the questions. Couldn't quite 
+// 6: Check to see if the user satatement is correct and to see if they have answered all of the questions. Couldn't quite 
 // figure out how to add the line of text to the html, used alerts to signify answers instead
 function selectAnswer(isCorrect) {
     if (isCorrect == true) {
@@ -122,7 +137,7 @@ function selectAnswer(isCorrect) {
     }
 }
 
-// Ends the quiz and removes the timer element to show user score
+// 7: Ends the quiz and removes the timer element to show user score
 function endQuiz() {
     sec = 0;
     questionContainerEl.classList.add('hide');
@@ -135,7 +150,7 @@ function endQuiz() {
 var initialsToAdd = "";
 var highRollersClub = [];
 
-// listener for the high score button and function to make it useful
+// 8: listener for the high score button and function to make it useful
 submit.addEventListener('click', function (event) {
     event.preventDefault();
     showLeaderboard();
@@ -150,7 +165,7 @@ function addScores(initials, score) {
     localStorage.setItem('highRollersClub', JSON.stringify(highRollersClub));
 }
 
-// This starts the game over is the user clicks "play again".
+// 9: This starts the game over is the user clicks "play again".
 function startAgain() {
     sec = 60;
     score = 0;
@@ -163,7 +178,7 @@ playAgain.addEventListener('click', function () {
     startAgain();
 })
 
-// Clears local storage if the user clicks "clear Scores".
+// 10: Clears local storage if the user clicks "clear Scores".
 function clearLeaderboard() {
     localStorage.clear();
     leaderBoardList.innerHTML = "";
@@ -198,8 +213,9 @@ leaderBoardButton.addEventListener('click', function () {
 });
 console.log(highRollersClub)
 console.log(scores)
-// Where the all importat questions are housed, try not to cheat by looking at the answers
+// 11: Where the all importat questions are housed, try not to cheat by looking at the answers
 // Remember the old maxim "He who fails to learn from history is doomed to repeat it"
+// Reformated after watching a co student in office hours (huzah for office hours!)
 var questionArray = [
 
     {
