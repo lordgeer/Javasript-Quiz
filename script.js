@@ -183,9 +183,9 @@ function clearLeaderboard() {
     localStorage.clear();
     leaderBoardList.innerHTML = "";
 }
-clearScores.addEventListener('click', function () {
-    clearLeaderboard();
-})
+clearScores.addEventListener('click',clearLeaderboard)
+    
+
 
 // This hides all of the non-essential HTML elements and also populates the leaderboard with initials and scores from local storage.
 function showLeaderboard() {
@@ -215,7 +215,7 @@ console.log(highRollersClub)
 console.log(scores)
 // 11: Where the all importat questions are housed, try not to cheat by looking at the answers
 // Remember the old maxim "He who fails to learn from history is doomed to repeat it"
-// Reformated after watching a co student in office hours (huzah for office hours!)
+// Reformated after watching a co student in office hours (huzah for office hours)
 var questionArray = [
 
     {
