@@ -8,7 +8,7 @@ No installation required. Simply go to this website https://lordgeer.github.io/J
 ![JavascriptQuiz](images/Screenshot1.png)
 ![JavascriptQuiz](images/Screenshot2.png)
 ![JavascriptQuiz](images/Screenshot3.png)
-![JavascriptQuiz](aimages/Screenshot4.png)
+![JavascriptQuiz](images/Screenshot4.png)
 
 ## Usage
 
